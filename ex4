@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# programa que recebe um número e imrpime todos os números pares entre 0 e o número digitado
+# entrada: <numero
+# saida: 0 2 4 6 8 10 ... <numero>
+
+pei() {
+echo "ex4 <numero maior q 0>" && exit
+}
+
+[ $# -ne 1 ] && pei # se nao receber exatamente um numero, mostra erro
+
+re='^[0-9]+$' 
+! [[ $1 =~ $re ]] && pei # checa se o numero é inteiro
+[ $1 -lt 0 ] && pei # checa se o numero é maior que 0
+
+seq -s " " 0 2 $1 # imprime todos os numeros pares entre 0 e o numero digitado, separados por espaco

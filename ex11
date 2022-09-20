@@ -1,0 +1,12 @@
+#!/bin/bash
+
+re='^[0-9]+$'
+reO='^[+-/*]+$'
+
+if ! [[ $1 =~ $re && $3 =~ $re ]]; then
+  echo "quero números" && exit
+elif ! [[ "$2" =~ $reO ]]; then
+  echo "operador invalido" && exit
+fi
+
+echo $(($1$2$3)) # executa o calculo

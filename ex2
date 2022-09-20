@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# programa que recebe um nome de usuario e verifica se ele existe
+# entrada: <nome de usuario>
+# saida: o usuário <nome de usuário> <existe|não existe>
+
+echo -n "diz o nome: "
+read nome
+
+# lê o arquivo /etc/passwd, filtra o texto para ter apenas o root e usuários humanos,
+# filtra o texto para ter apenas os nomes de usuário e verifica se o nome de usuário digitado existe com grep
+if [[ -n $(cat /etc/passwd | grep -E 'home|root' | cut -d : -f 1| grep -w -io $nome) ]]
+then
+  echo "o usuário $nome existe"
+else
+  echo "o usuário $nome não existe"
+fi

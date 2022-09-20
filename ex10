@@ -1,0 +1,13 @@
+#!/bin/bash
+
+palavras=()
+novaPalavra=''
+
+while true; do
+  echo -n "informe a palavra que deseja incluir na lista: "
+  read novaPalavra
+  [ "$novaPalavra" = 'sair' ] && exit
+  palavras+=("$novaPalavra")
+  printf "%s\n" "${palavras[@]}" | sort
+done
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# programa lista todos os arquivos e diretorios do diretorio atual
+# colocando um (dir) na frente do nome de diretorios
+# entrada: <path>
+# saiad: <arquivo> <diretorio (dir)> <arquivo> <diretorio (dir)> ...
+
+dir=$1
+
+[ ! -d "$dir" ] && echo "dir n existe pow" && exit
+
+for bagulho in $(ls $dir) # para cada arquivo ou diretorio do diretorio atual
+do 
+  echo "$bagulho $([ -d $bagulho ] && echo "(dir)")" # se for diretorio, coloca (dir) na frente do nome
+done

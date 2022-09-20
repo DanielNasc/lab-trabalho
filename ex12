@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# lê o arquivo /etc/passwd, filtra o texto para ter apenas o root e usuários humanos,
+# filtra o texto para ter apenas o nome de usuario e o diretorio de home,
+cat /etc/passwd | grep -E 'home|root' | cut -d : -f 1,6 | sed 's/:/ => /'

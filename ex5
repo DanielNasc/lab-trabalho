@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# programa que recebe o nome de um arquivo e mostra quantos bytes ele tem
+
+! [ -f $1 ] && echo "quero um arquivo valido" #
+
+echo "o arquivo tem $(wc -c $1 | cut -d ' ' -f 1) bytes"
+
