@@ -8,6 +8,7 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 # Tema
 theme('Black')
 
+# Primeira Coluna de Botões
 layout_botoes_col1 = [
     [Text('Exercício 1:'), Push(), Button('Run', key='E1'), Button('Info', key='B1')],
 
@@ -19,6 +20,7 @@ layout_botoes_col1 = [
 
 ]
 
+# Segunda Coluna de Botões
 layout_botoes_col2 = [
     [Text('Exercício 2:'), Push(), Button('Run', key='E2'), Button('Info', key='B2')],
 
@@ -29,6 +31,7 @@ layout_botoes_col2 = [
     [Text('Exercício 11:'), Push(), Button('Run', key='E11'), Button('Info', key='B11')],
 ]
 
+# Terceira Coluna de Botões
 layout_botoes_col3 = [
     [Text('Exercício 3:'), Push(), Button('Run', key='E3'), Button('Info', key='B3')],
 
@@ -39,8 +42,10 @@ layout_botoes_col3 = [
     [Text('Exercício 12:'), Push(), Button('Run', key='E12'), Button('Info', key='B12')]
 ]
 
+# Coluna Vazia
 layout_vazio = [[]]
 
+# Layout Principal
 layout = [
     [Text('Trabalho de Laboratório', font=('Bahnschrift 17'))],
     [HSeparator()],
@@ -59,6 +64,7 @@ layout = [
 
 ]
 
+# Janela Principal
 window = Window (
     'Ramon Supremacy',
     size=(1280, 720),
@@ -66,7 +72,7 @@ window = Window (
     element_justification='c'
 )
 
-
+# Popups e Executáveis
 while True:
     event, values = window.read()
 
@@ -139,4 +145,5 @@ while True:
         case None:
             break
 
+# Fechar janela
 window.close()
