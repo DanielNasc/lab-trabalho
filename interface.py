@@ -1,3 +1,4 @@
+from ctypes import alignment
 from PySimpleGUI import (Window, Button, Text, Image, Input, 
 Column, HSeparator, VSeparator, Push, popup, theme
 )
@@ -78,67 +79,146 @@ while True:
 
     match(event):
         case 'B1':
-            popup(f'Recebe dois numeros, mostra o maior e soma os dois.', image=('ramon.png'))
+            popup(
+                'Recebe dois numeros, mostra o maior e soma os dois.',
+                title='Exercício 1',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+                #image='ramon.png' 
+            )
         case 'E1':
             os.startfile(f"{current_dir}\\ex1")
         
         case 'B2':
-            popup(f'Recebe um nome de usuário e verifica se ele existe.', image=('ramon.png'))
+            popup(
+                'Recebe um nome de usuário e verifica se ele existe.',
+                title='Exercício 2',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E2':
             os.startfile(f"{current_dir}\\ex2")
 
         case 'B3':
-            popup(f'Lista todos os arquivos e diretórios do diretóorio atual.', image=('ramon.png'))
+            popup(
+                'Lista todos os arquivos e diretórios do diretório atual.',
+                title='Exercício 3',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E3':
             os.startfile(f"{current_dir}\\ex3")
         
         case 'B4':
-            popup(f'Recebe um número e imprime todos os pares entre\n0 e o número digitado.')
+            popup(
+                'Recebe um número e imprime todos os pares entre 0 e o número digitado.',
+                title='Exercício 4',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E4':
             os.startfile(f"{current_dir}\\ex4")
         
         case 'B5':
-            popup(f'Recebe o nome de um arquivo e mostra quantos bytes ele tem.')
+            popup(
+                'Recebe o nome de um arquivo e mostra quantos bytes ele tem.',
+                title='Exercício 5',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E5':
             os.startfile(f"{current_dir}\\ex5")
         
         case 'B6':
-            popup(f'Pequeno menu de 3 opções de listagem de recursos do sistema.')
+            popup(
+                'Pequeno menu de 3 opções de listagem de recursos do sistema.',
+                title='Exercício 6',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E6':
             os.startfile(f"{current_dir}\\ex6")
 
         case 'B7':
-            popup(f'Imprime todas as datas em que serão ministradas aulas.')
+            popup(
+                'Imprime todas as datas em que serão ministradas aulas.',
+                title='Exercício 7',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E7':
             os.startfile(f"{current_dir}\\ex7")
 
         case 'B8':
-            popup(f'Substitui o nome de todos os arquivos do diretório,\npela palavra passada.')
+            popup(
+                'Substitui o nome de todos os arquivos do diretório, pela palavra passada.',
+                title='Exercício 8',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E8':
             os.startfile(f"{current_dir}\\ex8")
 
         case 'B9':
-            popup(f'Imprime ordenadamente todos os argumentos\npassados pelo usuário.')
+            popup(
+                'Imprime ordenadamente todos os argumentos passados pelo usuário.',
+                title='Exercício 9',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E9':
             os.startfile(f"{current_dir}\\ex9")
 
         case 'B10':
-            popup(f'Imprime ordenadamente palavras passadas pelo usuário.')
+            popup(
+                'Imprime ordenadamente palavras passadas pelo usuário.',
+                title='Exercício 10',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E10':
             os.startfile(f"{current_dir}\\ex10")
 
         case 'B11':
-            popup(f'Recebe dois números e um operando, e realiza a operação.')
+            popup(
+                'Recebe dois números e um operando, e realiza a operação.',
+                title='Exercício 11',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E11':
             os.startfile(f"{current_dir}\\ex11")
 
         case 'B12':
-            popup(f'Apresenta os usuário do sistema e respectivos SHELLs.')
+            popup(
+                'Apresenta os usuário do sistema e respectivos SHELLs.',
+                title='Exercício 12',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E12':
             os.startfile(f"{current_dir}\\ex12")
 
         case 'B13':
-            popup(f'Recebe um número e imprime todos os pares entre\n0 e o número digitado.')
+            popup(
+                'Recebe um número e imprime todos os pares entre 0 e o número digitado.',
+                title='Exercício 13',
+                background_color='#060814',
+                line_width=50,
+                custom_text='Voltar'
+            )
         case 'E13':
             os.startfile(f"{current_dir}\\ex13")
 
