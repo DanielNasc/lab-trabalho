@@ -3,10 +3,34 @@
 re='^[0-9]+$'
 reO='^[+-/*]+$'
 
-if ! [[ $1 =~ $re && $3 =~ $re ]]; then
-  echo "quero números" && exit
-elif ! [[ "$2" =~ $reO ]]; then
-  echo "operador invalido" && exit
-fi
+while :
+do
+  echo -n "Digite o primeiro número: "
+  read num1
 
-echo $(($1$2$3)) # executa o calculo
+  if [[ $num1 =~ $re ]]; then break
+  else echo "quero números"
+  fi
+done
+
+while :
+do
+  echo -n "Digite o segundo número: "
+  read num2
+
+  if [[ $num2 =~ $re ]]; then break
+  else echo "quero números"
+  fi
+done
+
+while :
+do
+  echo -n "Digite o operanto: "
+  read operator
+
+  if [[ $operator =~ $reO ]]; then break
+  else echo "quero um operando válido... bruh"
+  fi
+done
+
+echo $(($num1$operator$num2)) # executa o calculo

@@ -2,6 +2,7 @@
 # programa que recebe dois numeros, mostra o maior e soma dos dois
 # entrada: <numero1> <numero2>
 # saida: <numero1> é <maior que|menor que|igual a> <numero2>
+<<<<<<< HEAD
 if [ $# -ne 2 ]; then # se nao receber exatamente dois numeros, mostra erro
   echo bruh
   exit
@@ -19,8 +20,38 @@ if [ $1 -gt $2 ]
 elif [ $1 -lt $2 ]
   then
     echo "$1 é menor que $2"
+=======
+
+
+re='^[0-9]+$' # regex para checar se os numeros são inteiros
+
+while :
+do
+  echo -n "Digite o primeiro número: "
+  read number1
+  
+  if [[ $number1 =~ $re ]]; then break
+  else echo "eu disse número, eu quero números"
+  fi
+done
+
+while :
+do
+  echo -n "Digite o segundo número: "
+  read number2
+  
+  if [[ $number2 =~ $re ]]; then break
+  else echo "eu disse número, eu quero números"
+  fi
+done
+
+if [ $number1 -gt $number2 ]; then
+  echo "$number1 é maior que $number2"
+elif [ $number1 -lt $number2 ]; then
+  echo "$number1 é menor que $number2"
+>>>>>>> Daniel
 else
-  echo "$1 é igual a $2"
+  echo "$number1 é igual a $number2"
 fi
 
-echo "soma $(($1+$2))"
+echo "soma $(($number1+$number2))"

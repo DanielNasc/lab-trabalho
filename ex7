@@ -9,7 +9,7 @@
 # entrada: 2008/02/07 2008/07/05 1,3
 # saida: 11/02/2008, 13/02/2008, 18/02/2008, 20/02/2008, ...
 
-function checar_data {
+function check_date {
   # checa se a data é válida
   # entrada: <data>
   # saida: 1 se válida, 0 se inválida
@@ -21,7 +21,7 @@ function checar_data {
   fi
 }
 
-function checar_dias {
+function check_days {
     # checa se os dias da semana estão no intervalo [0,6]
     # e estão separados por vírgula
     # entrada: <dias da semana>
@@ -45,23 +45,28 @@ function checar_intervalo {
     fi
 }
 
-data_inicial=$1
-data_final=$2
-dias=$3
+echo -n "manda a data inicial: "
+read initial_date
+check_date $initial_date
 
-checar_data $data_inicial
-checar_data $data_final
-checar_dias $dias
+echo -n "manda a data final: "
+read final_date
+check_date $final_date
 
-data_inicial=$(date -d "$data_inicial" +%s) # converte para segundos
-data_final=$(date -d "$data_final" +%s) # converte para segundos
+echo -n "manda o array de dias q tu quer (ex: 1,2,4): "
+read days
 
-checar_intervalo $data_inicial $data_final
+check_days $days
 
-for ((i=$data_inicial; i<=$data_final; i+=86400)); do # incrementa em 1 dia (86400 segundos)
-    data=$(date -d @$i +%d/%m/%Y) # converte para data
-    dias_semana=$(date -d @$i +%w) # converte para dia da semana
-    if [[ $dias =~ $dias_semana ]]; then # se o dia da semana está no intervalo
-        echo $data
+initial_date=$(date -d "$initial_date" +%s) # converte para segundos
+final_date=$(date -d "$final_date" +%s) # converte para segundos
+
+checar_intervalo $initial_date $final_date
+
+for ((i=$initial_date; i<=$final_date; i+=86400)); do # incrementa em 1 dia (86400 segundos)
+    formatted_date=$(date -d @$i +%d/%m/%Y) # converte para data
+    week_days=$(date -d @$i +%w) # converte para dia da semana
+    if [[ $days =~ $days_semana ]]; then # se o dia da semana está no intervalo
+        echo $formatted_date
     fi
 done

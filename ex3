@@ -5,7 +5,8 @@
 # entrada: <path>
 # saiad: <arquivo> <diretorio (dir)> <arquivo> <diretorio (dir)> ...
 
-dir=$1
+echo -n "diz o diretório: "
+read dir
 
 [ ! -d "$dir" ] && echo "dir n existe pow" && exit
 
