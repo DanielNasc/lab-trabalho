@@ -1,7 +1,8 @@
-from PySimpleGUI import (Window, Button, Text, Image, Input, 
-Column, HSeparator, VSeparator, Push, popup, theme
-)
 import os
+import subprocess
+import platform
+from PySimpleGUI import (Window, Button, Text, Image, Column, HSeparator, Push, popup, theme
+)
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -72,6 +73,12 @@ window = Window (
     element_justification='c'
 )
 
+def execute(file):
+    if platform.system() == "Windows":
+        os.startfile(f"{current_dir}/{file}")
+    else:
+        subprocess.call(['gnome-terminal', '--', "sh", "-c", f"{current_dir}/{file}"])
+
 # Popups e Executáveis
 while True:
     event, values = window.read()
@@ -80,67 +87,67 @@ while True:
         case 'B1':
             popup(f'Recebe dois numeros, mostra o maior e soma os dois.', image=('ramon.png'))
         case 'E1':
-            os.startfile(f"{current_dir}\\ex1")
+            execute("ex1")
         
         case 'B2':
             popup(f'Recebe um nome de usuário e verifica se ele existe.', image=('ramon.png'))
         case 'E2':
-            os.startfile(f"{current_dir}\\ex2")
+            execute("ex2")
 
         case 'B3':
             popup(f'Lista todos os arquivos e diretórios do diretóorio atual.', image=('ramon.png'))
         case 'E3':
-            os.startfile(f"{current_dir}\\ex3")
+            execute("ex3")
         
         case 'B4':
             popup(f'Recebe um número e imprime todos os pares entre\n0 e o número digitado.')
         case 'E4':
-            os.startfile(f"{current_dir}\\ex4")
+            execute("ex4")
         
         case 'B5':
             popup(f'Recebe o nome de um arquivo e mostra quantos bytes ele tem.')
         case 'E5':
-            os.startfile(f"{current_dir}\\ex5")
+            execute("ex5")
         
         case 'B6':
             popup(f'Pequeno menu de 3 opções de listagem de recursos do sistema.')
         case 'E6':
-            os.startfile(f"{current_dir}\\ex6")
+            execute("ex6")
 
         case 'B7':
             popup(f'Imprime todas as datas em que serão ministradas aulas.')
         case 'E7':
-            os.startfile(f"{current_dir}\\ex7")
+            execute("ex7")
 
         case 'B8':
             popup(f'Substitui o nome de todos os arquivos do diretório,\npela palavra passada.')
         case 'E8':
-            os.startfile(f"{current_dir}\\ex8")
+            execute("ex8")
 
         case 'B9':
             popup(f'Imprime ordenadamente todos os argumentos\npassados pelo usuário.')
         case 'E9':
-            os.startfile(f"{current_dir}\\ex9")
+            execute("ex9")
 
         case 'B10':
             popup(f'Imprime ordenadamente palavras passadas pelo usuário.')
         case 'E10':
-            os.startfile(f"{current_dir}\\ex10")
+            execute("ex10")
 
         case 'B11':
             popup(f'Recebe dois números e um operando, e realiza a operação.')
         case 'E11':
-            os.startfile(f"{current_dir}\\ex11")
+            execute("ex11")
 
         case 'B12':
             popup(f'Apresenta os usuário do sistema e respectivos SHELLs.')
         case 'E12':
-            os.startfile(f"{current_dir}\\ex12")
+            execute("ex12")
 
         case 'B13':
             popup(f'Recebe um número e imprime todos os pares entre\n0 e o número digitado.')
         case 'E13':
-            os.startfile(f"{current_dir}\\ex13")
+            execute("ex13")
 
         case None:
             break
