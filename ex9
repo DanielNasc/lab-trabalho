@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n "Manda a lista de palavras separadas por espaço: "
+echo -n "Digite a lista de palavras separadas por espaço: "
 read word_list
 
 tr " " "\n" <<< $word_list | sort

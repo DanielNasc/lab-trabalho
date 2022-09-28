@@ -20,7 +20,7 @@ while [ $opcao -ne 4 ]; do
       ;;
     4) exit
       ;;
-    *) echo "eoq???" && exit
+    *) echo "Nani??? ( ≖.≖)" && exit
   esac
 done
 

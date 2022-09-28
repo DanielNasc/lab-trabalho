@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# programa lista todos os arquivos e diretorios do diretorio atual
-# colocando um (dir) na frente do nome de diretorios
-# entrada: <path>
-# saiad: <arquivo> <diretorio (dir)> <arquivo> <diretorio (dir)> ...
+# Programa lista todos os arquivos e diretórios do diretório atual,
+# colocando um (dir) na frente do nome de diretórios.
+# Entrada: <path>
+# Saída: <arquivo> <diretorio (dir)> <arquivo> <diretorio (dir)> ...
 
-echo -n "diz o diretório: "
+echo -n "Digite o diretório: "
 read dir
 
-[ ! -d "$dir" ] && echo "dir n existe pow" && exit
+[ ! -d "$dir" ] && echo "Diretório inválido! ( ˘︹˘ )" && exit
 
 for bagulho in $(ls $dir) # para cada arquivo ou diretorio do diretorio atual
 do 

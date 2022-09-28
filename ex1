@@ -1,7 +1,7 @@
 #!/bin/bash
-# programa que recebe dois numeros, mostra o maior e soma dos dois
-# entrada: <numero1> <numero2>
-# saida: <numero1> é <maior que|menor que|igual a> <numero2>
+# Programa que recebe dois numeros, mostra o maior e a soma dos dois.
+# Entrada: <numero1> <numero2>
+# Saída: <numero1> é <maior que|menor que|igual a> <numero2>
 
 
 re='^[0-9]+$' # regex para checar se os numeros são inteiros
@@ -12,7 +12,7 @@ do
   read number1
   
   if [[ $number1 =~ $re ]]; then break
-  else echo "eu disse número, eu quero números"
+  else echo "Eu disse número, eu quero números! (ง︡'-'︠)ง"
   fi
 done
 
@@ -22,16 +22,16 @@ do
   read number2
   
   if [[ $number2 =~ $re ]]; then break
-  else echo "eu disse número, eu quero números"
+  else echo "Eu disse número, eu quero números! (ง︡'-'︠)ง"
   fi
 done
 
 if [ $number1 -gt $number2 ]; then
-  echo "$number1 é maior que $number2"
+  echo "O $number1 é maior que $number2!"
 elif [ $number1 -lt $number2 ]; then
-  echo "$number1 é menor que $number2"
+  echo "O $number1 é menor que $number2!"
 else
-  echo "$number1 é igual a $number2"
+  echo "O $number1 é igual a $number2!"
 fi
 
-echo "soma $(($number1+$number2))"
+echo "Soma: $(($number1+$number2))"

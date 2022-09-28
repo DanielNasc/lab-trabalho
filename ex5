@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# programa que recebe o nome de um arquivo e mostra quantos bytes ele tem
+# Programa que recebe o nome de um arquivo e mostra quantos bytes ele tem!
 
-echo -n "manda o path do arquivo: "
+echo -n "Digite o path do arquivo: "
 read file
 
-! [ -f $file ] && echo "quero um arquivo valido" #
+! [ -f $file ] && echo "Quero um arquivo valido! (ㆆ_ㆆ)" #
 
-echo "o arquivo tem $(wc -c $file | cut -d ' ' -f 1) bytes"
+echo "O arquivo tem $(wc -c $file | cut -d ' ' -f 1) bytes! (>‿◠)✌"
 

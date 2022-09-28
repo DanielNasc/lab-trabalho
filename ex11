@@ -9,7 +9,7 @@ do
   read num1
 
   if [[ $num1 =~ $re ]]; then break
-  else echo "quero números"
+  else echo "Quero números! (ง︡'-'︠)ง"
   fi
 done
 
@@ -19,7 +19,7 @@ do
   read num2
 
   if [[ $num2 =~ $re ]]; then break
-  else echo "quero números"
+  else echo "Quero números! (ง︡'-'︠)ง"
   fi
 done
 
@@ -29,8 +29,8 @@ do
   read operator
 
   if [[ $operator =~ $reO ]]; then break
-  else echo "quero um operando válido... bruh"
+  else echo "Quero um operando válido! (ง︡'-'︠)ง"
   fi
 done
 
-echo $(($num1$operator$num2)) # executa o calculo
+echo $(($num1$operator$num2)) # executa o cálculo

@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# programa que recebe um número e imrpime todos os números pares entre 0 e o número digitado
-# entrada: <numero
-# saida: 0 2 4 6 8 10 ... <numero>
+# Programa que recebe um número e imprime todos os pares entre 0 e o número digitado.
+# Entrada: <numero>
+# Saída: 0 2 4 6 8 10 ... <numero>
 
 pei() {
-echo "quero um número maior q 0..." && exit
+echo "Quero um número maior do que 0! (ㆆ_ㆆ)" && exit
 }
 
-echo -n "Manda um número: "
+echo -n "Digite um número: "
 read num
 
 re='^[0-9]+$' 
