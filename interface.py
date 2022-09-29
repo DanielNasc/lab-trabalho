@@ -77,7 +77,8 @@ def execute(file):
     if platform.system() == "Windows":
         os.startfile(f"{current_dir}/{file}")
     else:
-        subprocess.call(['gnome-terminal', '--', "sh", "-c", f"{current_dir}/{file}"])
+        command = f"gnome-terminal -- sh -c \"{current_dir}/{file}; read -p '\nPressione ENTER para sair...' REPLY \""
+        subprocess.call(command, shell=True)
 
 # Popups e Executáveis
 while True:
