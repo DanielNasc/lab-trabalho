@@ -1,6 +1,9 @@
 #!/bin/bash
 
-[ $(realpath $(dirname $BASH_SOURCE)) = $PWD ] && echo "AQUI NÃO" && exit
+echo -n "Digite o diretório desejado: "
+read dir
+
+[ $(realpath $(dirname $BASH_SOURCE)) = $(realpath $dir) ] && echo "AQUI NÃO" && exit
 
 for file in $(echo *); do
   if [[ -d $file || $file = $(basename $BASH_SOURCE) ]]; then

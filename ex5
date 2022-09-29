@@ -2,10 +2,15 @@
 
 # Programa que recebe o nome de um arquivo e mostra quantos bytes ele tem!
 
-echo -n "Digite o path do arquivo: "
-read file
+while :
+do
+    echo -n "Digite o path do arquivo: "
+    read file
 
-! [ -f $file ] && echo "Quero um arquivo valido! (ㆆ_ㆆ)" #
+    if ! [ -f $file ]; then echo "Quero um arquivo valido! (ㆆ_ㆆ)"
+    else break
+    fi
+done
 
 echo "O arquivo tem $(wc -c $file | cut -d ' ' -f 1) bytes! (>‿◠)✌"
 

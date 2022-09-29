@@ -8,9 +8,11 @@
 echo -n "Digite o diretório: "
 read dir
 
+dir=$(realpath $dir)
+
 [ ! -d "$dir" ] && echo "Diretório inválido! ( ˘︹˘ )" && exit
 
 for bagulho in $(ls $dir) # para cada arquivo ou diretorio do diretorio atual
 do 
-  echo "$bagulho $([ -d $bagulho ] && echo "(dir)")" # se for diretorio, coloca (dir) na frente do nome
+  echo "$bagulho $([ -d "$dir/$bagulho" ] && echo "(dir)")" # se for diretorio, coloca (dir) na frente do nome
 done
