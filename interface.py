@@ -1,3 +1,5 @@
+import json
+import re
 from PySimpleGUI import (Window, Button, Text, Image, Column, HSeparator, Push, popup, theme
 )
 import os
@@ -80,157 +82,27 @@ def execute(file):
         command = f"gnome-terminal -- sh -c \"{current_dir}/{file}; read -p '\nPressione ENTER para sair...' REPLY \""
         subprocess.call(command, shell=True)
 
+with open("./buttons.json", "r") as f:
+    programs = json.load(f)
+
 # Popups e Executáveis
 while True:
     event, values = window.read()
 
-    match(event):
-        case 'B1':
-            popup(
-                'Recebe dois numeros, mostra o maior e soma os dois.',
-                title='Exercício 1',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-                #image='ramon.png' 
-            )
-        case 'E1':
-            execute("ex1")
-        
-        case 'B2':
-            popup(
-                'Recebe um nome de usuário e verifica se ele existe.',
-                title='Exercício 2',
+    if "B" in event:
+        popup(
+                programs[event]["description"],
+                title=programs[event]["title"],
                 background_color='#060814',
                 line_width=50,
                 custom_text='Voltar'
             )
-        case 'E2':
-            execute("ex2")
+    elif "E" in event:
+        e_num = re.sub('[^0-9]', "", event)
+        execute(f"ex{e_num}")
+    elif event is None:
+        break
 
-        case 'B3':
-            popup(
-                'Lista todos os arquivos e diretórios do diretório atual.',
-                title='Exercício 3',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E3':
-            execute("ex3")
-        
-        case 'B4':
-            popup(
-                'Recebe um número e imprime todos os pares entre 0 e o número digitado.',
-                title='Exercício 4',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E4':
-            execute("ex4")
-        
-        case 'B5':
-            popup(
-                'Recebe o nome de um arquivo e mostra quantos bytes ele tem.',
-                title='Exercício 5',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E5':
-            execute("ex5")
-        
-        case 'B6':
-            popup(
-                'Pequeno menu de 3 opções de listagem de recursos do sistema.',
-                title='Exercício 6',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E6':
-            execute("ex6")
-
-        case 'B7':
-            popup(
-                'Imprime todas as datas em que serão ministradas aulas.',
-                title='Exercício 7',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E7':
-            execute("ex7")
-
-        case 'B8':
-            popup(
-                'Substitui o nome de todos os arquivos do diretório, pela palavra passada.',
-                title='Exercício 8',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E8':
-            execute("ex8")
-
-        case 'B9':
-            popup(
-                'Imprime ordenadamente todos os argumentos passados pelo usuário.',
-                title='Exercício 9',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E9':
-            execute("ex9")
-
-        case 'B10':
-            popup(
-                'Imprime ordenadamente palavras passadas pelo usuário.',
-                title='Exercício 10',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E10':
-            execute("ex10")
-
-        case 'B11':
-            popup(
-                'Recebe dois números e um operando, e realiza a operação.',
-                title='Exercício 11',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E11':
-            execute("ex11")
-
-        case 'B12':
-            popup(
-                'Apresenta os usuário do sistema e respectivos SHELLs.',
-                title='Exercício 12',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E12':
-            execute("ex12")
-
-        case 'B13':
-            popup(
-                'Recebe um número e imprime todos os pares entre 0 e o número digitado.',
-                title='Exercício 13',
-                background_color='#060814',
-                line_width=50,
-                custom_text='Voltar'
-            )
-        case 'E13':
-            execute("ex13")
-
-        case None:
-            break
 
 # Fechar janela
 window.close()

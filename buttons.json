@@ -1,0 +1,54 @@
+{
+    "B1": {
+        "title": "Exercício 1",
+        "description": "Recebe dois numeros, mostra o maior e soma os dois."
+    },
+    "B2": {
+        "title": "Exercício 2",
+        "description": "Recebe um nome de usuário e verifica se ele existe."
+    },
+    "B3": {
+        "title": "Exercício 3",
+        "description": "Lista todos os arquivos e diretórios do diretório atual."
+    },
+    "B4": {
+        "title": "Exercício 4",
+        "description": "Recebe um número e imprime todos os pares entre 0 e o número digitado."
+    },
+    "B5": {
+        "title": "Exercício 5",
+        "description": "Recebe o nome de um arquivo e mostra quantos bytes ele tem."
+    },
+    "B6": {
+        "title": "Exercício 6",
+        "description": "Pequeno menu de 3 opções de listagem de recursos do sistema."
+    },
+    "B7": {
+        "title": "Exercício 7",
+        "description": "Imprime todas as datas em que serão ministradas aulas."
+    },
+    "B8": {
+        "title": "Exercício 8",
+        "description": "Substitui o nome de todos os arquivos do diretório, pela palavra passada."
+    },
+    "B9": {
+        "title": "Exercício 9",
+        "description": "Imprime ordenadamente todos os argumentos passados pelo usuário."
+    },
+    "B10": {
+        "title": "Exercício 10",
+        "description": "Imprime ordenadamente palavras passadas pelo usuário."
+    },
+    "B11": {
+        "title": "Exercício 11",
+        "description": "Recebe dois números e um operando, e realiza a operação."
+    },
+    "B12": {
+        "title": "Exercício 12",
+        "description": "Apresenta os usuário do sistema e respectivos SHELLs."
+    },
+    "B13": {
+        "title": "Exercício 13",
+        "description": "Recebe um número e imprime todos os pares entre 0 e o número digitado."
+    }
+}
