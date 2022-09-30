@@ -8,55 +8,60 @@ import platform
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
-# Tema
-theme('Black')
-imagem = 'ufca.png'
+# Tema inicial
+theme('DarkBlue2')
+photo = 'ufca.png'
 
 # Layout Inicial
-layout_inicial_esquerdo = [
+left_home_layout= [
     [Image(filename='user.png')],
 ]
 
-layout_inicial_direito = [
+right_home_layout = [
     [Text('Senha:'), Push(), Input(password_char='*', key='SENHA')],
-    [Push(), Button('Login!', key='L1')]
+    [Push(), Button('Login!', key='L1')],
+    [Text('Caso visitante: ufca'), Push()]
 ]
 
-layout_inicial = [
-    [Column(layout_inicial_esquerdo),
+home_layout = [
+    [Column(left_home_layout),
     VSeparator(),
-    Column(layout_inicial_direito)]
+    Column(right_home_layout)]
 ]
 
 # Janela Inicial
-window_ini = Window (
+
+home_window = Window (
     'Menu Inicial',
-    layout=layout_inicial,
+    layout=home_layout,
     element_justification='c'
 )
 
 while True:
-    event, values = window_ini.read()
+    event, values = home_window.read()
     if "L1" in event:
         if values['SENHA'] == 'zueira':
-            imagem = 'ramon.png'
+            photo = 'ramon.png'
             break
         elif values['SENHA'] == 'ufca':
-            imagem = 'avatar.png'
+            photo = 'avatar.png'
             break
         elif values['SENHA'] == 'tomato':
-            imagem = 'malu.png'
+            photo = 'malu.png'
             break
         elif values['SENHA'] == 'anonimous':
-            imagem = 'ufca.png'
+            photo = 'ufca.png'
             break
         elif values['SENHA'] == 'kpoper':
-            imagem = 'daniel.png'
+            photo = 'daniel.png'
             break
     elif event is None:
         break 
 
-window_ini.close()
+home_window.close()
+
+# Tema inicial
+theme('Black')
 
 def create_buttons_layout(start, end):
     return [
@@ -64,34 +69,33 @@ def create_buttons_layout(start, end):
              for x in range(start, end + 1, 3)
         ]
 
-# Primeira Coluna de Botões
-layout_botoes_col1 = create_buttons_layout(1, 10)
+# Primeira Coluna de Botõess
+button_layout_col1 = create_buttons_layout(1, 10)
 
 # Segunda Coluna de Botões
-layout_botoes_col2 = create_buttons_layout(2, 11)
+button_layout_col2 = create_buttons_layout(2, 11)
 
 # Terceira Coluna de Botões
-layout_botoes_col3 = create_buttons_layout(3, 12)
+button_layout_col3 = create_buttons_layout(3, 12)
 
 # Coluna Vazia
-layout_vazio = [[]]
+empty_layout = [[]]
 
 # Layout Principal
-
 layout = [
     [Text('Trabalho de Laboratório', font=('Bahnschrift 17'))],
     [HSeparator()],
     [HSeparator('')],
-    [Image(filename= imagem, key='IMAGE')],
+    [Image(filename= photo, key='IMAGE')],
     [HSeparator()],
     [HSeparator('')],
     [HSeparator('')],
     [HSeparator('')],
-    [Column(layout_botoes_col1),
-    Column(layout_vazio),
-    Column(layout_botoes_col2),
-    Column(layout_vazio),
-    Column(layout_botoes_col3)],
+    [Column(button_layout_col1),
+    Column(empty_layout),
+    Column(button_layout_col2),
+    Column(empty_layout),
+    Column(button_layout_col3)],
     [Text('Exercício 13: '), Button('Run', key='E13'), Button('Info', key='B13')]
 
 ]
