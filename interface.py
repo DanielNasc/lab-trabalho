@@ -58,39 +58,20 @@ while True:
 
 window_ini.close()
 
+def create_buttons_layout(start, end):
+    return [
+        [Text(f'Exercício {x}:'), Push(), Button('Run', key=f'E{x}'), Button('Info', key=f'B{x}')]
+             for x in range(start, end + 1, 3)
+        ]
+
 # Primeira Coluna de Botões
-layout_botoes_col1 = [
-    [Text('Exercício 1:'), Push(), Button('Run', key='E1'), Button('Info', key='B1')],
-
-    [Text('Exercício 4:'), Push(), Button('Run', key='E4'), Button('Info', key='B4')],
-
-    [Text('Exercício 7:'), Push(), Button('Run', key='E7'), Button('Info', key='B7')],
-
-    [Text('Exercício 10:'), Push(), Button('Run', key='E10'), Button('Info', key='B10')],
-
-]
+layout_botoes_col1 = create_buttons_layout(1, 10)
 
 # Segunda Coluna de Botões
-layout_botoes_col2 = [
-    [Text('Exercício 2:'), Push(), Button('Run', key='E2'), Button('Info', key='B2')],
-
-    [Text('Exercício 5:'), Push(), Button('Run', key='E5'), Button('Info', key='B5')],
-
-    [Text('Exercício 8:'), Push(), Button('Run', key='E8'), Button('Info', key='B8')],
-
-    [Text('Exercício 11:'), Push(), Button('Run', key='E11'), Button('Info', key='B11')],
-]
+layout_botoes_col2 = create_buttons_layout(2, 11)
 
 # Terceira Coluna de Botões
-layout_botoes_col3 = [
-    [Text('Exercício 3:'), Push(), Button('Run', key='E3'), Button('Info', key='B3')],
-
-    [Text('Exercício 6:'), Push(), Button('Run', key='E6'), Button('Info', key='B6')],
-
-    [Text('Exercício 9:'), Push(), Button('Run', key='E9'), Button('Info', key='B9')],
-
-    [Text('Exercício 12:'), Push(), Button('Run', key='E12'), Button('Info', key='B12')]
-]
+layout_botoes_col3 = create_buttons_layout(3, 12)
 
 # Coluna Vazia
 layout_vazio = [[]]
