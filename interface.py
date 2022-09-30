@@ -1,6 +1,6 @@
 import json
 import re
-from PySimpleGUI import (Window, Button, Text, Image, Column, HSeparator, Push, popup, theme
+from PySimpleGUI import (Window, Button, Input, Text, Image, Column, HSeparator, VSeparator, Push, popup, theme
 )
 import os
 import subprocess
@@ -10,6 +10,53 @@ current_dir = os.path.dirname(os.path.realpath(__file__))
 
 # Tema
 theme('Black')
+imagem = 'ufca.png'
+
+# Layout Inicial
+layout_inicial_esquerdo = [
+    [Image(filename='user.png')],
+]
+
+layout_inicial_direito = [
+    [Text('Senha:'), Push(), Input(password_char='*', key='SENHA')],
+    [Push(), Button('Login!', key='L1')]
+]
+
+layout_inicial = [
+    [Column(layout_inicial_esquerdo),
+    VSeparator(),
+    Column(layout_inicial_direito)]
+]
+
+# Janela Inicial
+window_ini = Window (
+    'Menu Inicial',
+    layout=layout_inicial,
+    element_justification='c'
+)
+
+while True:
+    event, values = window_ini.read()
+    if "L1" in event:
+        if values['SENHA'] == 'zueira':
+            imagem = 'ramon.png'
+            break
+        elif values['SENHA'] == 'ufca':
+            imagem = 'avatar.png'
+            break
+        elif values['SENHA'] == 'tomato':
+            imagem = 'malu.png'
+            break
+        elif values['SENHA'] == 'anonimous':
+            imagem = 'ufca.png'
+            break
+        elif values['SENHA'] == 'kpoper':
+            imagem = 'daniel.png'
+            break
+    elif event is None:
+        break 
+
+window_ini.close()
 
 # Primeira Coluna de Botões
 layout_botoes_col1 = [
@@ -49,11 +96,12 @@ layout_botoes_col3 = [
 layout_vazio = [[]]
 
 # Layout Principal
+
 layout = [
     [Text('Trabalho de Laboratório', font=('Bahnschrift 17'))],
     [HSeparator()],
     [HSeparator('')],
-    [Image(filename='avatar.png', key='IMAGE')],
+    [Image(filename= imagem, key='IMAGE')],
     [HSeparator()],
     [HSeparator('')],
     [HSeparator('')],
@@ -86,9 +134,10 @@ with open("./buttons.json", "r") as f:
     programs = json.load(f)
 
 # Popups e Executáveis
+
 while True:
     event, values = window.read()
-
+    
     if "B" in event:
         popup(
                 programs[event]["description"],
@@ -102,7 +151,6 @@ while True:
         execute(f"ex{e_num}")
     elif event is None:
         break
-
 
 # Fechar janela
 window.close()
